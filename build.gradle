@@ -1,0 +1,56 @@
+buildscript {
+    repositories {
+        maven { url = "https://lss233.littleservice.cn/repositories/minecraft" }
+        jcenter()
+        maven { url = "http://files.minecraftforge.net/maven" }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+    }
+}
+
+repositories {
+    //Thaumcraft
+    maven { url = "https://maven.mcmoddev.com" }
+
+    //Hwyla
+    maven { url = "http://tehnut.info/maven" }
+}
+apply plugin: 'net.minecraftforge.gradle.forge'
+
+version = "1.12.2-0.0.1"
+group = "me.xfl03"
+archivesBaseName = "ThaumicWaila"
+
+sourceCompatibility = targetCompatibility = '1.8'
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}
+
+minecraft {
+    version = "1.12.2-14.23.5.2768"
+    runDir = "run"
+    mappings = "stable_39"
+
+    replace "@VERSION@", project.version
+    replaceIn "me/xfl03/thaumicwaila/ThaumicWaila.java"
+}
+
+dependencies {
+    deobfCompile 'com.azanor:Thaumcraft:1.12.2-6.1.BETA24'
+    deobfCompile "mcp.mobius.waila:Hwyla:1.8.26-B41_1.12.2"
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': project.minecraft.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "thaumicwaila",
+  "name": "ThaumicWaila",
+  "description": "Waila addon for Thaumcraft.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["xfl03"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
