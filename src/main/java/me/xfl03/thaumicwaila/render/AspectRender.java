@@ -1,8 +1,9 @@
-package me.xfl03.thaumicwaila;
+package me.xfl03.thaumicwaila.render;
 
 import mcp.mobius.waila.api.IWailaCommonAccessor;
 import mcp.mobius.waila.api.IWailaRegistrar;
 import mcp.mobius.waila.api.IWailaTooltipRenderer;
+import me.xfl03.thaumicwaila.ThaumicWaila;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
@@ -42,8 +43,8 @@ public class AspectRender implements IWailaTooltipRenderer {
         GlStateManager.popMatrix();
     }
 
-    public static void register(IWailaRegistrar registar) {
-        registar.registerTooltipRenderer("thaumicwaila.aspect", new AspectRender());
+    public static void register(IWailaRegistrar registrar) {
+        registrar.registerTooltipRenderer("thaumicwaila.aspect", new AspectRender());
 
         ThaumicWaila.LOG.info("AspectRender registered.");
     }

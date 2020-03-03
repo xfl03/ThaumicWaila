@@ -17,7 +17,10 @@ public class ThaumicWaila {
     public static final Logger LOG = LogManager.getLogger("ThaumicWaila");
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        FMLInterModComms.sendMessage("waila", "register", "me.xfl03.thaumicwaila.AspectContainerProvider.register");
-        FMLInterModComms.sendMessage("waila", "register", "me.xfl03.thaumicwaila.AspectRender.register");
+        FMLInterModComms.sendMessage("waila", "register", "me.xfl03.thaumicwaila.provider.AspectContainerProvider.register");
+        FMLInterModComms.sendMessage("waila", "register", "me.xfl03.thaumicwaila.provider.BlockVisBatteryProvider.register");
+        FMLInterModComms.sendMessage("waila", "register", "me.xfl03.thaumicwaila.provider.GogglesDisplayProvider.register");
+        FMLInterModComms.sendMessage("waila", "register", "me.xfl03.thaumicwaila.provider.StabilizableProvider.register");
+        FMLInterModComms.sendMessage("waila", "register", "me.xfl03.thaumicwaila.render.AspectRender.register");
     }
 }
